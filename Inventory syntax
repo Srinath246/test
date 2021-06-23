@@ -1,0 +1,9 @@
+[webserver]
+172.34.33.55
+
+[testserver]
+localhost
+
+[ubuntu]
+localhost
+172.34.33.55
