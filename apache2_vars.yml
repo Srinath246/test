@@ -1,0 +1,12 @@
+---
+- hosts:webserver
+  become: yes
+  tasks:
+  - name: install apache2
+    package:
+      name: "{{ package_name }}"
+      state: present
+  - name: start apache and enable
+    service:
+      name: "{{ package_name }}"
+      state: started   
