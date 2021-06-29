@@ -1,0 +1,29 @@
+#this yml is to know Module "loop" & "fail"
+---
+- hosts: 172.31.24.134
+  become: yes
+  tasks:
+  - name: install httpd
+    yum:
+      name: httpd
+      state: present
+  - name: start httpd
+    service:
+      name: httpd
+      enabled: yes
+      state: restarted
+  - debug:
+      msg: "installed httpd"    
+  - name: install php module
+    yum:
+      name: "{{ item }}"       
+      state: present
+    loop:
+    - php  
+    - php-mysql
+    - php-pdo
+    - php-gd
+    - php-mbstring
+
+
+  #https://www.tecmint.com/install-lamp-in-centos-7/

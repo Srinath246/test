@@ -1,0 +1,9 @@
+[webserver]
+localhost package_name=apache2
+172.31.24.134
+
+[webserver:vars]
+package_name=httpd
+
+[dbserver]
+172.31.30.153
